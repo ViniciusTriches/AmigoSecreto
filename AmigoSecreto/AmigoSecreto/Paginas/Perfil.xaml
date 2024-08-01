@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AmigoSecreto.Paginas.Perfil">
+
+    <StackLayout>
+        <Grid>
+
+            <ImageButton Margin="0,40,0,0" BackgroundColor="Transparent"
+                         VerticalOptions="Start" HorizontalOptions="Center"
+                         CornerRadius="100" HeightRequest="200" WidthRequest="150"
+                         Source="Profile.png"/>
+        </Grid>
+
+
+        <Grid>
+            <StackLayout>
+                
+                <Frame HorizontalOptions="Center" CornerRadius="40" WidthRequest="300">
+                    <Label x:Name="NamePerfil_Label" Text="Nome" TextColor="Black"
+                           HorizontalTextAlignment="Center" FontSize="Body"/>
+                </Frame>
+
+                <Frame HorizontalOptions="Center" CornerRadius="40" WidthRequest="300">
+                    <Label x:Name="EmailPerfil_Label" Text="Email" TextColor="Black"
+                           HorizontalTextAlignment="Center" FontSize="Body"/>
+                </Frame>
+                
+            </StackLayout>
+        </Grid>
+
+        <Grid>
+            <Image Source="GiftBox.png" Scale="0.40"/>
+            <Frame HorizontalOptions="Center" VerticalOptions="End" CornerRadius="40" 
+                   WidthRequest="300" Margin="0,0,0,10">
+
+                <!--
+                <Label Text="Nº de Sorteios" TextColor="Black" FontSize="Body"
+                       HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand"/>
+                -->
+            </Frame>
+
+        </Grid>
+    </StackLayout>
+</ContentPage>

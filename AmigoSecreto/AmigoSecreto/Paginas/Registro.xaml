@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AmigoSecreto.Paginas.Registro">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#FF3562">
+            <StackLayout>
+
+                <!--Titulo-->
+                <StackLayout Padding="80" VerticalOptions="Start" HorizontalOptions="Center">
+                    <Label Text="REGISTRE-SE" FontSize="Title" TextColor="White" FontAttributes="Bold"/>
+                </StackLayout>
+
+                <!--Tela de Registro-->
+                <StackLayout VerticalOptions="Center">
+                    <Frame BackgroundColor="Transparent" Margin="20">
+                        <StackLayout>
+                            <Label Text="Nome" FontSize="Body" TextColor="White" HorizontalOptions="Start"/>
+
+                            <Frame Padding="0" CornerRadius="20" IsClippedToBounds="True">
+                                <Entry x:Name="NomeRegistro_Entry" Margin="10,0"
+                                       TextColor="Black" BackgroundColor="Transparent"
+                                       Keyboard="Default" ReturnType="Next" ClearButtonVisibility="WhileEditing"/>
+                            </Frame>
+
+                            <Label Text="E-mail" FontSize="Body" TextColor="White" HorizontalOptions="Start"/>
+                            <Frame Padding="0" CornerRadius="20" IsClippedToBounds="True">
+                                <Entry x:Name="EmailRegistro_Entry" Margin="10,0"
+                                       TextColor="Black" BackgroundColor="Transparent"
+                                       Keyboard="Email" ReturnType="Next" ClearButtonVisibility="WhileEditing"/>
+                            </Frame>
+
+                            <Label Text="Senha" FontSize="Body" TextColor="White" HorizontalOptions="Start"/>
+                            <Frame Padding="0" CornerRadius="20" IsClippedToBounds="True">
+                                <Entry x:Name="SenhaRegistro_Entry" Margin="10,0"
+                                       TextColor="Black" BackgroundColor="Transparent"
+                                       IsPassword="True" Keyboard="Default" ReturnType="Next" ClearButtonVisibility="WhileEditing"/>
+                            </Frame>
+
+                            <Label Text="Confirmar Senha" FontSize="Body" TextColor="White" HorizontalOptions="Start"/>
+                            <Frame Padding="0" CornerRadius="20" IsClippedToBounds="False">
+                                <Entry x:Name="ConfirmSenhaRegistro_Entry" Margin="10,0"
+                                       TextColor="Black" BackgroundColor="Transparent"
+                                       IsPassword="True" Keyboard="Default" ReturnType="Next" ClearButtonVisibility="WhileEditing"/>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                    <Button x:Name="ConfirmRegistro_Button" Text="Criar" 
+                            BackgroundColor="White" TextColor="Black"
+                            CornerRadius="20" HorizontalOptions="Center"
+                            Clicked="ConfirmRegistro_Button_Clicked"/>
+
+                    <Button x:Name="CancelarRegistro_Button" Text="Cancelar" FontAttributes="Italic"
+                            TextTransform="None" BackgroundColor="Transparent" TextColor="White"
+                            CornerRadius="20" HorizontalOptions="Center"
+                            Clicked="CancelarRegistro_Button_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!--Carregamento-->
+            <ActivityIndicator x:Name="RodaDeCarregamento" Color="Black"
+                   IsVisible="False" IsRunning="False" Scale="0.25"/>   
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

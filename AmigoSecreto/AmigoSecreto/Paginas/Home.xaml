@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AmigoSecreto.Paginas"
+             x:Class="AmigoSecreto.Paginas.Home"
+            
+            NavigationPage.HasNavigationBar="False"
+            SelectedTabColor="White"
+            UnselectedTabColor="LightGray"
+            BarBackgroundColor="#FF3562">
+
+    <local:Sorteio Title="Sorteios" IconImageSource="GiftBox.png" BackgroundColor="#FF3562"/>
+    <local:Perfil Title="Perfil" IconImageSource="Profile.png" BackgroundColor="#FF3562"/>
+    <local:Historico Title="Historico" IconImageSource="Historico.png" BackgroundColor="#FF3562"/>
+</TabbedPage>

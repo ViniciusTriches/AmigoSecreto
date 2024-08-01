@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             x:Class="AmigoSecreto.MainPage">
+
+    <Grid BackgroundColor="#FF3562">
+        <StackLayout>
+
+            <!--Titulo-->
+            <StackLayout Margin="0,100,0,0" VerticalOptions="Start" HorizontalOptions="Center">
+                <Image Source="GiftBox.png" WidthRequest="100" HorizontalOptions="Center"/>
+                <Label Text="LOGIN" FontSize="70" TextColor="White" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <!--Tela de Acesso/Registro-->
+            <StackLayout VerticalOptions="Start">
+                <Frame BackgroundColor="Transparent" Margin="20,0" CornerRadius="20">
+                    <StackLayout>
+
+                        <Label Text="  E-mail" TextColor="White" FontSize="Body" HorizontalOptions="Start"/>
+                        <Frame CornerRadius="20" Padding="0" IsClippedToBounds="True">
+                            <!--REMOVER O TEXT ANTES DE PUBLICAR-->
+                            <Entry x:Name="LoginEmail_Entry" TextColor="Black" BackgroundColor="Transparent"
+                                   Margin="10,0" Keyboard="Email" ReturnType="Next" ClearButtonVisibility="WhileEditing"/>
+                        </Frame>
+
+                        <Label Text="  Senha" TextColor="White" FontSize="Body" HorizontalOptions="Start"/>
+                        <Frame CornerRadius="20" Padding="0" IsClippedToBounds="True">
+                            <!--REMOVER O TEXT ANTES DE PUBLICAR-->
+                            <Entry x:Name="LoginSenha_Entry" TextColor="Black" BackgroundColor="Transparent"
+                                   Margin="10,0" Keyboard="Default" ReturnType="Next" 
+                                   ClearButtonVisibility="WhileEditing" IsPassword="True"/>
+                        </Frame>
+
+                    </StackLayout>
+                </Frame>
+                <Button x:Name="Login_Button" Text="Acessar" BackgroundColor="White" TextColor="Black"
+                        TextTransform="None" CornerRadius="20" HorizontalOptions="Center"
+                        Clicked="Login_Button_Clicked"/>
+                <Button x:Name="Registro_Button" Text="Criar conta" FontAttributes="Bold,Italic"
+                        TextTransform="None" BackgroundColor="Transparent" TextColor="White"
+                        Clicked="Registro_Button_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+
+        <!--Botão Sobre-->
+        <StackLayout VerticalOptions="End">
+            <Button x:Name="Sobre_Button" Text="Sobre" TextColor="White"
+                    FontAttributes="Bold, Italic" TextTransform="None"
+                    BackgroundColor="Transparent" CornerRadius="20" HorizontalOptions="Center"
+                    Clicked="Sobre_Button_Clicked"/>
+        </StackLayout>
+
+        <!--Carregamento-->
+        <ActivityIndicator x:Name="RodaDeCarregamento" Color="Black"
+                           IsVisible="False" IsRunning="False" Scale="0.25"/>
+    </Grid>
+</ContentPage>

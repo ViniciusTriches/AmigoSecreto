@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AmigoSecreto.Paginas.Sorteio">
+    <ScrollView>
+        <Grid>
+            <StackLayout>
+                <!--Botões Sorteio-->
+                <Button x:Name="RegistrarSorteio_Button" Margin="0,10,0,0" BackgroundColor="White"
+                        VerticalOptions="Start" HorizontalOptions="CenterAndExpand" WidthRequest="400"
+                        TextColor="Black" TextTransform="None" Text="Criar Sorteio" FontSize="Body"
+                        FontAttributes="Bold" CornerRadius="20"
+                        Clicked="RegistrarSorteio_Button_Clicked"/>
+                <!--Botão de finalização-->
+                <Button x:Name="FinalizarSorteio_Button" Margin="0,10,0,0" BackgroundColor="White"
+                        VerticalOptions="Start" HorizontalOptions="CenterAndExpand" WidthRequest="400"
+                        TextColor="Black" TextTransform="None" Text="Finalizar e Sortear" FontSize="Body"
+                        FontAttributes="Bold" CornerRadius="20" IsVisible="false" IsEnabled="False"
+                        Clicked="FinalizarSorteio_Button_Clicked"/>
+
+                <Grid x:Name = "ParticipanteButtons_Grid" IsVisible="false">
+                    <Button x:Name="AdicionarParticipante_Button" Margin="10" BackgroundColor="White"
+                            VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="190"
+                            TextColor="Black" TextTransform="None" Text="Adicionar Participante"
+                            CornerRadius="20" IsVisible="true"
+                            Clicked="AdicionarParticipante_Button_Clicked"/>
+
+                    <Button x:Name="RemoverParticipante_Button" Margin="10" BackgroundColor="White"
+                            VerticalOptions="Start" HorizontalOptions="End" WidthRequest="190"
+                            TextColor="Black" TextTransform="None" Text="Remover Participante"
+                            CornerRadius="20" IsVisible="true"
+                            Clicked="RemoverParticipante_Button_Clicked"/>
+                </Grid>
+
+                <Frame BackgroundColor="#FF3562" BorderColor="White" CornerRadius="20" Margin="10">
+                    <StackLayout>
+                        <Entry x:Name="SorteioNome_Entry" Placeholder="Nome do Sorteio"/>
+                    </StackLayout>
+                </Frame>
+
+                <!--Informações do participante-->
+                <Frame x:Name="ParticipanteDados_Frame" IsVisible="false"
+                       BackgroundColor="#FF356" BorderColor="White"
+                       CornerRadius="20" Margin="10">
+                    <StackLayout>
+                        <Label Text="Informações do participante" TextColor="White"/>
+                        <Entry x:Name="ParticipanteNome_Entry" Placeholder="Nome" ReturnType="Next"/>
+                        <Entry x:Name="ParticipanteEmail_Entry" Placeholder="E-mail" Keyboard="Email" ReturnType="Next"/>
+                        <Entry x:Name="ParticipantePresente_Entry" Placeholder="Sugestão de presente" ReturnType="Done"/>
+                    </StackLayout>
+                </Frame>
+
+                <CollectionView x:Name="ParticipantesSorteio_CollectionView"
+                                SelectionMode="Single" SelectionChanged="ParticipantesSorteio_CollectionView_SelectionChanged"
+                                Margin="10" HorizontalOptions="CenterAndExpand"
+                                ItemsSource="{Binding Participantes}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame x:Name="ParticipanteDados_Frame" IsVisible="true"
+                                       BackgroundColor="#FF356" BorderColor="White"
+                                       CornerRadius="20" Margin="10">
+                                    <StackLayout>
+                                        <Label x:Name="ParticipanteNome_Lable" TextColor="White" Text="{Binding Nome}"/>
+                                        <Label x:Name="ParticipanteEmail_Lable" TextColor="White" Text="{Binding Email}"/>
+                                        <Label x:Name="ParticipantePresente_Lable" TextColor="White" Text="{Binding SugestaoPresentes}"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>
